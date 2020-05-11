@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./components/navbar";
+import Section from "./components/section";
+import dummyText from "./dummytext";
+import Home from "./components/home";
+import Hobbies from "./components/hobbies";
+import Projects from "./components/projects";
+import About from "./components/about";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        <Home dark={true} id="section1" />
+        <About
+          title="Section 2"
+          subtitle={dummyText}
+          dark={false}
+          id="section2"
+        />
+        <Projects
+          dark={true}
+          id="section3"
+        />
+        <Hobbies dark={false} id="section4" />
+        <Section
+          dark={true}
+          id="section5"
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
